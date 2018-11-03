@@ -44,7 +44,7 @@ def synthesize():
 
     # reference audio
     mels, maxlen = [], 0
-    files = glob(hp.ref_audio)
+    files = sorted(glob(hp.ref_audio))
     for f in files:
         _, mel, _ = load_spectrograms(f)
         mel = np.reshape(mel, (-1, hp.n_mels))
